@@ -1,0 +1,16 @@
+npm run start # Starts up a development server
+npm run test # Runs tests associated with the project
+npm run build # Builds a production version of the application
+
+docker build -f Dockerfile.dev .
+
+docker run -p 3000:3000 596af2c8b73647c6e
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app 596af2c8b73647c6e
+
+docker compose up
+
+docker run -it 709dcc2189cf74 npm run test
+
+docker attach 06a0aa18bbac
+
+docker run -p 8080:80 89a7f22654738
